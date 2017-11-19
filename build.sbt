@@ -9,8 +9,12 @@ scalaVersion := "2.11.6"
 libraryDependencies ++= Seq(
   javaJdbc,
   cache,
-  javaWs
+  javaWs,
+  javaJpa,
+  "org.hibernate" % "hibernate-entitymanager" % "4.3.9.Final"
 )
+
+libraryDependencies += "net.sf.dozer" % "dozer" % "5.5.1"
 
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
