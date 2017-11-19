@@ -15,16 +15,16 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RestController extends Controller {
+public class RestController extends Controller
+{
 
     private static final ObjectMapper JSON_OBJECT_MAPPER = new ObjectMapper();
-
-
 
     @Inject
     IDNowService bizService;
 
-    public Result startIdentification() {
+    public Result startIdentification()
+    {
         try
         {
             JsonNode json = request().body().asJson();
@@ -50,12 +50,6 @@ public class RestController extends Controller {
     public Result identifications()
     {
     	ArrayNode identifications = Json.newArray();
-    	
-    	//Get the current identification
-    	//Compute correct order
-    	//Create new identification JSON with JsonNode identification = Json.newObject();
-    	//Add identification to identifications list
-
         List<IdentificationDTO> identDTOs = bizService.getIdentifications();
         List<JsonNode> jsonNodes = identDTOs.stream().map(JSON_OBJECT_MAPPER::<JsonNode>valueToTree).collect(Collectors.toList());
         identifications.addAll(jsonNodes);
