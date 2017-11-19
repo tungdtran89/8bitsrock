@@ -1,11 +1,18 @@
 package dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class IdentificationDTO
 {
+    @JsonProperty("id")
     private String id;
+    @JsonProperty("name")
     private String name;
+    @JsonProperty("time")
     private Long time;
+    @JsonProperty("waiting_time")
     private Long waitingTime;
+    @JsonProperty("company_id")
     private String companyId;
 
     public String getId()

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <company id="1" name="company1" sla_time="50" sla_percentage="0.9" current_sla_percentage="0.85"/>
+    <company id="2" name="company2" sla_time="50" sla_percentage="0.9" current_sla_percentage="0.85"/>
+
+    <!--<identification id="1" name="Pete Roberts" time="50" waiting_time="300000" company_id="1" />-->
+</dataset>

@@ -16,6 +16,10 @@ libraryDependencies ++= Seq(
 
 libraryDependencies += "net.sf.dozer" % "dozer" % "5.5.1"
 
+libraryDependencies += javaJdbc % Test
+
+libraryDependencies += "org.dbunit" % "dbunit" % "2.4.9" % "test"
+
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
 routesGenerator := InjectedRoutesGenerator

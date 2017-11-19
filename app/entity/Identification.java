@@ -1,14 +1,24 @@
 package entity;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
+@Entity
+@Table(name ="identification")
 public class Identification implements Serializable
 {
+    @Id
     private String id;
+    @Column(name="name")
     private String name;
+    @Column(name="time")
     private Long time;
+    @Column(name="waiting_time")
     private Long waitingTime;
-    private String companyId;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "company_id", referencedColumnName = "id")
+    private Company company;
 
     public String getId()
     {
@@ -50,13 +60,13 @@ public class Identification implements Serializable
         this.waitingTime = waitingTime;
     }
 
-    public String getCompanyId()
+    public Company getCompany()
     {
-        return companyId;
+        return company;
     }
 
-    public void setCompanyId(String companyId)
+    public void setCompany(Company company)
     {
-        this.companyId = companyId;
+        this.company = company;
     }
 }

@@ -14,11 +14,15 @@ public class GlobalSetup extends GlobalSettings
         Logger.info("Application has started");
         try
         {
-//            initCompanyList();
+            initCompanyList();
         } catch (Exception e)
         {
             Logger.error("Could not load the " + COMPANY_FILE
                     + " file. Error: " + e.getLocalizedMessage());
         }
+    }
+
+    private void initCompanyList()
+    {
     }
 }
