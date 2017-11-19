@@ -19,7 +19,6 @@ import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.junit.Test;
 
 import play.db.DB;
-import play.db.Database;
 import play.libs.Json;
 import play.libs.ws.WS;
 
@@ -107,7 +106,7 @@ public class RestControllerTest
 		running(testServer(3333, fakeApplication(inMemoryDatabase())), new Runnable() {
 			@Override
 			public void run() {
-				setupData("resources/case1.xml");
+				setupData("case1.xml");
 				WSResponse response = WS.url("http://localhost:3333/api/v1/pendingIdentifications").get().get(10000);
 				JsonNode body = response.asJson();
 				ArrayNode identNodes = ArrayNode.class.cast(body);
@@ -135,7 +134,7 @@ public class RestControllerTest
 		running(testServer(3333, fakeApplication(inMemoryDatabase())), new Runnable() {
 			@Override
 			public void run() {
-				setupData("resources/case2.xml");
+				setupData("case2.xml");
 				WSResponse response = WS.url("http://localhost:3333/api/v1/pendingIdentifications").get().get(10000);
 				JsonNode body = response.asJson();
 				ArrayNode identNodes = ArrayNode.class.cast(body);
@@ -163,7 +162,7 @@ public class RestControllerTest
 		running(testServer(3333, fakeApplication(inMemoryDatabase())), new Runnable() {
 			@Override
 			public void run() {
-				setupData("resources/case3.xml");
+				setupData("case3.xml");
 				WSResponse response = WS.url("http://localhost:3333/api/v1/pendingIdentifications").get().get(10000);
 				JsonNode body = response.asJson();
 				ArrayNode identNodes = ArrayNode.class.cast(body);
@@ -191,7 +190,7 @@ public class RestControllerTest
 		running(testServer(3333, fakeApplication(inMemoryDatabase())), new Runnable() {
 			@Override
 			public void run() {
-				setupData("resources/case4.xml");
+				setupData("case4.xml");
 				WSResponse response = WS.url("http://localhost:3333/api/v1/pendingIdentifications").get().get(10000);
 				JsonNode body = response.asJson();
 				ArrayNode identNodes = ArrayNode.class.cast(body);
@@ -219,7 +218,7 @@ public class RestControllerTest
 		running(testServer(3333, fakeApplication(inMemoryDatabase())), new Runnable() {
 			@Override
 			public void run() {
-				setupData("resources/case5.xml");
+				setupData("case5.xml");
 				WSResponse response = WS.url("http://localhost:3333/api/v1/pendingIdentifications").get().get(10000);
 				JsonNode body = response.asJson();
 				ArrayNode identNodes = ArrayNode.class.cast(body);
@@ -247,7 +246,7 @@ public class RestControllerTest
 		running(testServer(3333, fakeApplication(inMemoryDatabase())), new Runnable() {
 			@Override
 			public void run() {
-				setupData("resources/case6.xml");
+				setupData("case6.xml");
 				WSResponse response = WS.url("http://localhost:3333/api/v1/pendingIdentifications").get().get(10000);
 				JsonNode body = response.asJson();
 				ArrayNode identNodes = ArrayNode.class.cast(body);
