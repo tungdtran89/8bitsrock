@@ -6,6 +6,9 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
 scalaVersion := "2.11.6"
 
+lazy val scalacheck = "org.scalacheck" %% "scalacheck" % "1.13.4"
+libraryDependencies += scalacheck % Test
+
 libraryDependencies ++= Seq(
   javaJdbc,
   cache,
@@ -13,6 +16,10 @@ libraryDependencies ++= Seq(
   javaJpa,
   "org.hibernate" % "hibernate-entitymanager" % "4.3.9.Final"
 )
+
+libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % Test
+
+libraryDependencies += "junit" % "junit" % "4.12" % "test"
 
 libraryDependencies += "net.sf.dozer" % "dozer" % "5.5.1"
 
